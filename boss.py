@@ -1,4 +1,5 @@
 from enemy import Enemy
+import random
 
 class Florb(Enemy):
     def __init__(self, name):
@@ -7,5 +8,11 @@ class Florb(Enemy):
         self.attack_power = 30
 
     def attack(self):
-        return self.attack_power
+        if random.randint(1,10) == 5:
+            return (self.attack_power * 2)
+        else:
+            return self.attack_power
+
+    def take_damage(self, damage):
+        return super().take_damage(damage / 2)
 

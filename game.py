@@ -44,7 +44,19 @@ def main():
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
-    print("BOSS FIGHT")
+    if hero.is_alive():
+        print("BOSS FIGHT: florb king of goblins")
+        florb = Florb("florb")
+        while hero.is_alive() and florb.is_alive():
+            damage = hero.strike()
+            florb.take_damage(damage)
+            damage = florb.attack()
+            hero.receive_damage(damage)
+        if hero.is_alive():
+            print("Florb has been defeated!")
+        else:
+            print("The hero has been defeated!")
+        
     
 
     # Final tally of goblins defeated
