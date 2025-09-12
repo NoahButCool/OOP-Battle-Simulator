@@ -1,6 +1,7 @@
 from enemy import Enemy
 import random
 
+#Florb boss
 class Florb(Enemy):
     def __init__(self, name):
         super().__init__(name)
